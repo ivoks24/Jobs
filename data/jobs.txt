@@ -1,0 +1,6 @@
+travel work;8400;4;2022.06.15
+OPPO in Beijing;5950;2;2021.12.14
+vivo x80pro plus in Shanghai;4200;1;2022.02.20
+event;1200;1;2022.06.27
+picnic;7400;2;2022.06.30
+job in SZ;;2;2022.07.12

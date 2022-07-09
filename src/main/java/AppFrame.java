@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class AppFrame extends JFrame {
 
@@ -10,7 +11,10 @@ public class AppFrame extends JFrame {
 
     private JButton addJob;
 
-    AppFrame() {
+    AppFrame() throws IOException {
+
+//        UIDefaults uiDefaults = UIManager.getDefaults();
+//        System.out.println(uiDefaults);
 
         this.setSize(600, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,11 +22,14 @@ public class AppFrame extends JFrame {
         title = new Title();
         list = new List();
 
-        addJob = list.getAddJob();
-
         this.add(title, BorderLayout.NORTH);
         this.add(list, BorderLayout.CENTER);
-        this.add(new JPanel(), BorderLayout.SOUTH);
+
+        addJob = new JButton("ADD");
+        addJob.setPreferredSize(new Dimension(50, 40));
+        this.add(addJob, BorderLayout.SOUTH);
+
+        addListeners();
 
         this.setVisible(true);
     }
@@ -32,9 +39,7 @@ public class AppFrame extends JFrame {
         addJob.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
-                SpringLayout springLayout = new SpringLayout();
-//                Job job = new Job();
+                JOptionPane.showInputDialog(AppFrame.this, "message");
             }
         });
     }
